@@ -25,3 +25,32 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: #808080; /* Warna handle lebih gelap saat hover */
 }
+
+@font-face {
+  font-family: 'rubik-dirt';
+  src: url('/src/assets/fonts/Rubik_Dirt/RubikDirt-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+@font-face {
+  font-family: 'galindo';
+  src: url('/src/assets/fonts/Galindo/Galindo-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+@font-face {
+  font-family: 'lilita-one';
+  src: url('/src/assets/fonts/Lilita_One/LilitaOne-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'zain';
+  src: url('/src/assets/fonts/Zain/Zain-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'zain', Arial, sans-serif;
+}

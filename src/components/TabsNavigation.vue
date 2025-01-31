@@ -8,7 +8,7 @@
         v-for="tab in tabs"
         :key="tab.id"
         :class="[
-          'flex items-center w-full px-4 py-3 rounded-lg sm:text-base text-xs border border-fuchsia-800',
+          'flex items-center w-full px-4 py-3 rounded-lg sm:text-lg text-sm border border-fuchsia-800',
           isTabActive === tab.id ? classActive : classNonActive,
         ]"
         @click="setTabActive(tab.id)"
@@ -20,28 +20,29 @@
 
     <!-- Content -->
     <section class="col-span-4 p-6 bg-gray-700 rounded-lg w-full border border-fuchsia-800">
-      <div class="mb-5 flex items-center sm:gap-4 gap-2">
-        <h3 class="w-fit text-lg font-bold text-white text-medium">
+      <div class="sm:mb-5 mb-3 flex items-center sm:gap-4 gap-2">
+        <h3 class="w-fit sm:text-3xl text-2xl font-bold text-white text-medium">
           {{ selectedTab.label }}
         </h3>
-        <span class="text-xs text-white bg-fuchsia-500 px-1 py-[1px] rounded">{{
-          filteredRows.length
-        }}</span>
+        <span
+          class="sm:text-base text-xs font-bold text-white bg-fuchsia-500 px-1 py-[1px] rounded"
+          >{{ filteredRows.length }}</span
+        >
       </div>
 
       <!-- Search Input -->
       <div class="relative mb-4 sm:w-[50%] -ml-0">
-        <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+        <span class="absolute inset-y-0 left-0 flex items-center sm:pl-2 pl-3">
           <img
             src="https://api.iconify.design/mingcute:search-line.svg?color=%239CA3AF"
             alt="Search"
-            class="w-6 h-6"
+            class="sm:w-6 sm:h-6 w-4 h-4"
           />
         </span>
         <input
           v-model="keyword"
           type="search"
-          class="py-2 text-sm text-white bg-gray-600 border-2 border-gray-500 rounded-md pl-10 focus:outline-none focus:border-fuchsia-800 focus:text-white w-full"
+          class="sm:py-2 py-1 sm:text-lg text-base text-white bg-gray-600 border-2 border-gray-500 rounded-md sm:pl-10 pl-9 focus:outline-none focus:border-fuchsia-800 focus:text-white w-full"
           placeholder="Search..."
           autocomplete="off"
         />
@@ -75,7 +76,7 @@ const tabs = [
   },
   {
     id: 'noFollowBackData',
-    label: 'No Follow Back',
+    label: 'Not Following Back',
     icon: 'https://api.iconify.design/material-symbols:person-cancel.svg',
   },
   {

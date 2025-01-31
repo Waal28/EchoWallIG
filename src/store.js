@@ -3,12 +3,16 @@ import { reactive } from 'vue';
 import { formatData } from './utils/helperFunctions';
 
 export const store = reactive({
+  globalLoading: false,
   followingData: [],
   followersData: [],
   noFollowBackData: [],
   blockProfileData: [],
   closeFriendsData: [],
   pendingFollowReqData: [],
+  setGlobalLoading(value) {
+    this.globalLoading = value;
+  },
   setFollowingData(data) {
     this.followingData = formatData(data.relationships_following);
   },
