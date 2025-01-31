@@ -109,11 +109,11 @@ const handleFileUpload = async (event) => {
 
     // Jika tidak ada file yang ditemukan atau ekstraksi gagal
     if (Object.keys(extractedJsonData).length === 0) {
-      errorMessage.value = 'ZIP kosong atau format tidak valid.';
+      errorMessage.value = 'ZIP is empty or invalid format.';
     }
   } catch (error) {
     console.error('Gagal mengekstrak ZIP:', error);
-    errorMessage.value = 'Terjadi kesalahan saat mengekstrak file ZIP.';
+    errorMessage.value = 'An error occurred while extracting the ZIP file.';
   } finally {
     store.setGlobalLoading(false);
   }
