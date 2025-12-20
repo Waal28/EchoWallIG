@@ -27,7 +27,7 @@ export const store = reactive({
     );
   },
   setBlockProfileData(data) {
-    this.blockProfileData = formatData(data.relationships_blocked_users, true);
+    this.blockProfileData = formatData(data.relationships_blocked_users);
   },
   setCloseFriendsData(data) {
     this.closeFriendsData = formatData(data.relationships_close_friends);

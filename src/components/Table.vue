@@ -14,7 +14,7 @@ const { rows, cols } = defineProps({
 
 <template>
   <!-- component -->
-  <div class="overflow-auto max-h-[50vh] bg-gray-600 rounded-lg hide-scrollbar">
+  <div class="overflow-auto max-h-[50vh] bg-gray-600 rounded-lg">
     <table class="w-full min-w-max table-auto text-left">
       <thead>
         <tr>

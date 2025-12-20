@@ -86,25 +86,32 @@ const handleFileUpload = async (event) => {
         // Tambahkan kondisi untuk file lainnya jika diperlukan
       }
     }
-
+    const {
+      followingData,
+      followersData,
+      closeFriendsData,
+      blockProfileData,
+      pendingFollowReqData,
+    } = extractedJsonData;
+    console.log(extractedJsonData);
     // Setelah ekstraksi selesai, masukkan data ke dalam global state
-    if (extractedJsonData.followingData) {
-      store.setFollowingData(extractedJsonData.followingData); // Set data untuk following
+    if (followingData) {
+      store.setFollowingData(followingData); // Set data untuk following
     }
-    if (extractedJsonData.followersData) {
-      store.setFollowersData(extractedJsonData.followersData); // Set data untuk followers
+    if (followersData) {
+      store.setFollowersData(followersData); // Set data untuk followers
     }
-    if (extractedJsonData.followingData && extractedJsonData.followersData) {
-      store.setNoFollowBackData(extractedJsonData.followingData, extractedJsonData.followersData); // Set data untuk followers
+    if (followingData && followersData) {
+      store.setNoFollowBackData(followingData, followersData); // Set data untuk followers
     }
-    if (extractedJsonData.closeFriendsData) {
-      store.setCloseFriendsData(extractedJsonData.closeFriendsData); // Set data untuk close friends
+    if (closeFriendsData) {
+      store.setCloseFriendsData(closeFriendsData); // Set data untuk close friends
     }
-    if (extractedJsonData.blockProfileData) {
-      store.setBlockProfileData(extractedJsonData.blockProfileData); // Set data untuk blocked profiles
+    if (blockProfileData) {
+      store.setBlockProfileData(blockProfileData); // Set data untuk blocked profiles
     }
-    if (extractedJsonData.pendingFollowReqData) {
-      store.setPendingFollowReqData(extractedJsonData.pendingFollowReqData); // Set data untuk pending follow requests
+    if (pendingFollowReqData) {
+      store.setPendingFollowReqData(pendingFollowReqData); // Set data untuk pending follow requests
     }
 
     // Jika tidak ada file yang ditemukan atau ekstraksi gagal
